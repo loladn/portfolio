@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lola Dixneuf</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#accueil">LD</a>
+            </div>
+            <ul class="nav-links">
+                <!--<li><a href="#accueil">Accueil</a></li>-->
+                <li><a href="#a-propos">À propos de moi</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#bilan">Bilan</a></li>
+                <!--<li><a href="#contact">Contact</a></li>-->
+            </ul>
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="Lola Dixneuf">
+                </div>
+            </div>
+            <h1>Lola Dixneuf</h1>
+            <h2>Étudiante en Science des données</h2>
+            <!--<p>Gestion et analyse de données</p>-->
+            <div class="cta-buttons">
+                <a href="cv.pdf" class="btn btn-primary" download target="_blank">
+                    <i class="fas fa-download"></i> Télécharger mon CV
+                </a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="a-propos" class="section-about">
+        <h2>À propos de moi</h2>
+        <div class="about-content">
+            <div class="about-text collapsed">
+                <div class="about-text-content">
+                    <p>
+                        Bonjour, je m'appelle Lola, j'ai 19 ans et je suis étudiante en science des données à Niort. J'aime me définir comme une personne  curieuse, ouverte aux nouvelles expériences, et toujours motivée à m'impliquer dans des projets collectifs.
+                    </p>
+                    <p>
+                        Depuis deux ans, je m'investis dans le monde des festivals, une expérience qui a pris une place importante dans mon parcours personnel. J'ai commencé avec le festival local tourangeau "Superflux", dédié à la musique expérimentale, où j'ai participé à la communication en tant que bénévole. J'ai contribué à la création de contenu photo, vidéo et de témoignages pour alimenter les réseaux sociaux du festival, et cela m'a permis de découvrir l'envers du décor d'un événement culturel tout en développant des compétences concrètes en communication.
+                    </p>
+                    <p>
+                        En 2024, j'ai rejoint l'équipe bénévole du festival Terres du Son, où j'ai travaillé au sein d'un bar. Cette expérience a été particulièrement enrichissante, tant sur le plan humain que logistique. J'y ai rencontré des personnes avec qui j'ai gardé contact tout au long de l'année. Je participerai également à l'édition 2025, avec le même enthousiasme.
+                    </p>
+                    <div class="about-images">
+                        <div class="about-image-wrapper" id="img1">
+                            <img src="images/baryton(1).jpg" alt="Festival Superflux">
+                        </div>
+                        <div class="about-image-wrapper" id="img2">
+                            <img src="images/coeurs_concert.jpg" alt="Concert Terres du Son">
+                        </div>
+                        <div class="about-image-wrapper" id="img3">
+                            <img src="images/tour_charlmagne.jpg" alt="Tours">
+                        </div>
+                    </div>
+
+                    
+                    <p>
+                        Dans un autre registre, j'ai également été community manager des réseaux sociaux de mon département, le BUT Science des données de Niort, aux côtés de trois autres étudiants. Concevoir des publications et représenter notre formation sur les réseaux m'a permis de développer un esprit de synthèse, de la créativité, tout en respectant la neutralité de la formation, et un vrai sens du travail en équipe.
+                    </p>
+                    <p>
+                        Même si certaines activités, comme la course à pied, ont été mises de côté pour des raisons de santé, je continue à m'investir dans ce qui m'anime, c'est à dire découvrir de nouveaux artistes, aller à des concerts, ou simplement échanger sur des sujets de société, de culture ou de communication. 
+                        <br>Je m'intéresse aussi à la photographie, que je pratique de manière personnelle. Elle m'offre une façon différente de voir mon environnement, en particulier ma ville, Tours, que je redécouvre à travers les petits détails du quotidien auxquels je prête désormais plus attention. 
+                        <br>De plus, d'un point de vue sportif, je m'essaie à de nouvelles activités dès que j'en ai l'occasion, dans le but de conserver une forme physique, ce que je considère comme essentiel.
+                    </p>
+                    <p>
+                        Toutes ces expériences renforcent mon envie de contribuer à des projets concrets, humains, et plus ou moins porteurs de sens. C'est pour cela que je suis impatiente de poursuivre sur cette voie de la découverte et de continuer à apprendre de nouvelles choses, en gardant cette curiosité qui me pousse au quotidien à sortir de ma zone de confort !
+                    </p>
+                </div>
+                <div class="read-more-overlay"></div>
+                <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projets" class="section-projects">
+        <h2>Mes projets universitaires</h2>
+        <div class="projects-container">
+            <div class="projects-filters">
+                <div class="filter-group">
+                    <h4>Année</h4>
+                    <div class="filter-buttons year-filters">
+                        <button class="filter-btn active" data-year="all">Tous</button>
+                        <button class="filter-btn" data-year="1">1ère année</button>
+                        <button class="filter-btn" data-year="2">2ème année</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Domaine</h4>
+                    <div class="filter-buttons domain-filters">
+                        <button class="filter-btn active" data-domain="all">Tous</button>
+                        <button class="filter-btn" data-domain="info">Informatique</button>
+                        <button class="filter-btn" data-domain="stats">Statistiques</button>
+                        <!--<button class="filter-btn" data-domain="bi">Business Intelligence</button>-->
+                        <button class="filter-btn" data-domain="other">Autre</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Premier exemple de projet -->
+                <div class="project-card" data-year="2" data-domain="info">
+                    <div class="project-image">
+                        <img src="projets/projet_airbnb/vue_1.png" alt="Projet Airbnb">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Web</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <h3 class="project-title">Programmation web données Airbnb</h3>
+                        <p class="project-description">
+                            Création d'un site web dynamique pour la visualisation des données Airbnb des logements de la ville de Paris, grâce à des graphiques variés et interactifs.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/projet_airbnb/ppt_vcod_airbnb.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Présentation PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-year="2" data-domain="info">
+                    <div class="project-image">
+                        <img src="projets/sig_projet_mcdo/capture_carte.jpg" alt="Projet SIG McDonalds">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">SIG</span>
+                            <span class="project-tag">QGIS</span>
+                        </div>
+                        <h3 class="project-title">Étude SIG de l'implantation des McDonald's en France</h3>
+                        <p class="project-description">
+                            Étude de l'implantation des restaurants McDonald's en France, à partir d'une base de données SIG.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/sig_projet_mcdo/loladixneuf_compterendu.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Rapport PDF
+                            </a>
+                            <a href="#" class="project-link" data-modal="sig-resources">
+                                <i class="fas fa-images"></i>
+                                Voir les ressources
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-year="2" data-domain="info">
+                    <div class="project-image">
+                        <img src="projets/sae_php/capture_graphiques.png" alt="Projet web accidentologie">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <h3 class="project-title">Site web dynamique accidentologie</h3>
+                        <p class="project-description">
+                            Création d'un site web dynamique pour la visualisation des accidents corporels, à partir d'une base de données OpenData.
+                        </p>
+                        <div class="project-links">
+                        </div>
+                    </div>
+                </div>
+                <!-- Deuxième exemple de projet -->
+                <div class="project-card" data-year="2" data-domain="info">
+                    <div class="project-image">
+                        <img src="projets/vba_vcod/capture_excel.png" alt="Projet vba">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">VBA</span>
+                            <span class="project-tag">Automatisation</span>
+                        </div>
+                        <h3 class="project-title">Recrutement section sportive football</h3>
+                        <p class="project-description">
+                            Application de saisie des performances des candidats le jour du recrutement pour établir un classement et sélectionner les meilleurs.
+                        </p>
+                        <!--<div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-file-code"></i>
+                                Code source
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-chart-line"></i>
+                                Visualisations
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="project-card" data-year="2" data-domain="stats">
+                    <div class="project-image">
+                        <img src="projets/series_temp_norvege/capture_rapport_norvege.jpg" alt="Projet économie Norvège">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Séries temporelles</span>
+                            <span class="project-tag">OCDE</span>
+                        </div>
+                        <h3 class="project-title">Étude des enjeux économiques de la Norvège</h3>
+                        <p class="project-description">
+                            Analyse statistique des importations norvégiennes, afin de prévoir les évolutions économiques de la Norvège et de ses partenaires commerciaux.
+                        </p>
+                        <div class="project-links">
+                            <!--<a href="#" class="project-link">
+                                <i class="fas fa-images"></i>
+                                Voir les captures
+                            </a>-->
+                            <a href="projets/series_temp_norvege/sae_importations_norvege_lola_dixneuf.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Rapport PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-year="2" data-domain="other">
+                    <div class="project-image">
+                        <img src="projets/poster_science/capture_poster.png" alt="Projet poster">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Communication</span>
+                            <span class="project-tag">Data visualisation</span>
+                        </div>
+                        <h3 class="project-title">Poster scientifique sur la Data visualisation</h3>
+                        <p class="project-description">
+                            Réalisation d'un poster scientifique sur la Data visualisation, à l'occasion de la fête de la science.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/poster_science/poster_dataviz_entreprise-1.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Poster PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-year="1" data-domain="other">
+                    <div class="project-image">
+                        <img src="projets/sae_finale/capture.png" alt="Projet final">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Power Bi</span>
+                            <span class="project-tag">Méthode agile</span>
+                        </div>
+                        <h3 class="project-title">Projet final, analyse de données et reporting Calyxis</h3>
+                        <p class="project-description">
+                            Analyse de données et reporting pour Calyxis, observatoire spécialisé dans les accidents de la vie courante.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/sae_finale/presentation.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Présentation PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-year=1" data-domain="stats">
+                    <div class="project-image">
+                        <img src="projets/sae_echantillonnage/paca.png" alt="Projet échantillonnage">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">R</span>
+                            <span class="project-tag">Estimation</span>
+                        </div>
+                        <h3 class="project-title">Échantillonnage et estimation région Provence-Alpes-Côte d'Azur</h3>
+                        <p class="project-description">
+                            Étude d'examination de la population de la région Provence-Alpes-Côte d'Azur, grâce à la réalisation d'un échantillonnage et d'une estimation de la population.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/sae_echantillonnage/compte_rendu_sae_echantillon.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Rapport PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-year="1" data-domain="stats">
+                    <div class="project-image">
+                        <img src="projets/sae_logement/capture_logement.png" alt="Projet logement">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Étude</span>
+                            <span class="project-tag">Excel</span>
+                        </div>
+                        <h3 class="project-title">Étude logements étudiants Université de Poitiers</h3>
+                        <p class="project-description">
+                            Étude de la situation de logement des étudiants de l'Université de Poitiers, à partir des données d'une enquête.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/sae_logement/sae_logement.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Rapport PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-year="1" data-domain="other">
+                    <div class="project-image">
+                        <img src="projets/sae_poujoulat/logo_poujoulat.png" alt="Projet poujoulat">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Gestion</span>
+                            <span class="project-tag">Excel</span>
+                        </div>
+                        <h3 class="project-title">Étude chiffre d'affaires de la société Poujoulat</h3>
+                        <p class="project-description">
+                            Étude du chiffre d'affaires de la société Poujoulat.
+                        </p>
+                        <div class="project-links">
+                            <a href="projets/sae_poujoulat/dossier_etude.pdf" class="project-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Rapport PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences" class="section-skills">
+        <h2>Compétences</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Développement & Data</h3>
+                <div class="skills-tags">
+                    <!-- Langages -->
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">VBA</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">PHP</span>
+                    <!-- Outils & Frameworks -->
+                    <!--<span class="skill-tag">Git</span>-->
+                    <!--<span class="skill-tag">Jupyter Notebook</span>-->
+                    <!--<span class="skill-tag">VS Code</span>-->
+                    <!--<span class="skill-tag">PyCharm</span>-->
+                    <!-- Data -->
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <!-- BI -->
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Business Objects</span>
+                    <!--<span class="skill-tag">QlikView</span>-->
+                    <!-- BDD -->
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <!--<span class="skill-tag">MongoDB</span>-->
+                    <!-- SIG -->
+                    <span class="skill-tag">QGIS</span>
+                    <!--<span class="skill-tag">ArcGIS</span>-->
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Analyse & Statistiques</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Algèbre linéaire</span>
+                    <span class="skill-tag">Tests statistiques</span>
+                    <span class="skill-tag">Régression linéaire</span>
+                    <span class="skill-tag">Analyse factorielle</span>
+                    <span class="skill-tag">Classification</span>
+                    <!--<span class="skill-tag">Data Mining</span>-->
+                    <!--<span class="skill-tag">Machine Learning</span>-->
+                    <span class="skill-tag">Statistiques descriptives</span>
+                    <span class="skill-tag">Analyse bivariée</span>
+                    <span class="skill-tag">Tests d'hypothèses</span>
+                    <span class="skill-tag">Séries temporelles</span>
+                    <span class="skill-tag">Clustering</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Compétences Transversales</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Anglais</span>
+                    <span class="skill-tag">Gestion de projet</span>
+                    <span class="skill-tag">Méthodologie agile</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Travail d'Équipe</span>
+                    <!--<span class="skill-tag">Veille Technologique</span>-->
+                    <!--<span class="skill-tag">Documentation</span>-->
+                    <!--<span class="skill-tag">Présentation</span>-->
+                    <!--<span class="skill-tag">Analyse des Besoins</span>-->
+                    <!--<span class="skill-tag">Résolution de Problèmes</span>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Alternance -->
+    <!-- <section id="alternance" class="section-alternance">
+        <h2>Mon alternance</h2>
+        <div class="alternance-content">
+        </div>
+    </section> -->
+
+
+    <!-- Section Bilan Personnel -->
+    <section id="bilan" class="section-bilan">
+        <h2>Bilan personnel</h2>
+        <div class="bilan-content">
+            
+            <div class="personal-review">
+                <div class="personal-review-content collapsed">
+                    <p>
+                        Lors de cette deuxième année de Bachelor Universitaire de Technologie (BUT) Science des données au sein du site de Niort de l'IUT de Poitiers, j'ai davantage découvert le domaine de la data, tout en réfléchissant à l'avenir que je souhaite me forger d'un point de vue universitaire et professionnel. <br>Ce bilan personnel reprend donc mes réflexions face à mes expériences de cours et d'alternance en entreprise, ainsi que mes perspectives de poursuite d'études et de professionnalisation dans le domaine de la donnée.
+                    </p>
+                    <div class="read-more-overlay"></div>
+                    <div class="full-content">
+                        <p>
+                            <br>Tout d'abord, le début de cette deuxième année dans la formation a été marqué par une diversité des cours proposés, plus large que l'année précédente, grâce aux enseignements de nombreux.ses intervenant.es professionnel.les, nous proposant (ainsi) des cours de maîtrise de logiciels et langages de programmation divers, tels que Tableau Software et Business Object, deux logiciels fréquemment utilisés en entreprise pour de la préparation de données et de la visualisation par la réalisation de tableaux de bord. 
+                            <br> Mes résultats lors du premier semestre (S3 de la formation) ont globalement suivi la ligne directrice de l'année précédente, avec des notes tout à fait satisfaisantes pour les ressources telles que la gestion, l'anglais et les statistiques, ainsi que pour les cours et projets d'informatique, dans lesquels je me sens le plus à l'aise. 
+                            <br><br>C'est d'ailleurs pour cela que j'ai fait le choix, dès le milieu de la première année, de suivre le parcours Visualisation, Conception d'Outils Décisionnels (VCOD) pour cette deuxième année. En revanche, elles étaient un peu moins satisfaisantes pour l'algèbre que je n'ai toujours pas réussi à maîtriser par une approche de révisions plus efficace.
+
+                        </p>
+                        <p>
+                            <br>Par la suite, le second semestre de l'année m'a vue regagner en motivation et cela s'est fait ressentir dans les résultats. Entourée d'un groupe de travail sérieux et motivé j'ai pu grandement améliorer mes méthodes de travail au quotidien. 
+                            <br> De plus, c'est lors de ce semestre que j'ai pu concrètement découvrir le domaine spécialisé de la géomatique, grâce aux cours de Systèmes d'Information Géographiques (SIG) d'un intervenant extérieur professionnel qui nous a permis d'appréhender des cas réels d'utilisation de la géographie dans le traitement et l'analyse de données pour en tirer des conclusions. Cela s'est donc matérialisé par la réalisation de nombreux projets de découverte, en cours, avec des données réelles du gouvernement, et d'un projet final, plus complet, que j'ai choisi d'effectuer seule afin de ne manquer aucun aspect technique des étapes de la réalisation de celui-ci.
+
+                        </p>
+                        <a href="#projets">Cf : Étude SIG de l'implantation des McDonald's en France</a>
+                        <p>
+                            <br>Cette deuxième année a également été marquée par le début de mon alternance, que j'effectue en tant que salariée chez SNCF Voyageurs, TER Centre Val de Loire, à Tours, au sein de la Direction de production de l'opérationnel. J'y effectue des missions de création de codes d'automatisation de tâches, ainsi que des missions de maintenance d'outils déjà existants dans l'environnement de travail.
+                            <br>Ce début d'expérience en entreprise, qui se poursuivra jusqu'à l'été 2026, m'apporte beaucoup de rigueur et de compétences techniques au quotidien pour répondre au mieux aux besoins de l'entreprise, mais également suffisamment pour aborder les projets de cours avec un point de vue différent, bien plus logique et méthodique. Les cas pratiques manipulés lors de projets dans le cadre de la formation, ainsi que les cours théoriques de statistiques et programmation me semblent davantage intéressants car je les mets aisément en parallèle avec les cas vus en entreprise. C'est un réel avantage que je remarque en le fait de suivre la formation du BUT en alternance. 
+
+                        </p>
+                        <p>
+                            <br>En ce qui concerne l'avenir, mon choix se porte, à ce jour, davantage vers une poursuite d'études qu'une insertion professionnelle à l'issue de la troisième année de BUT, du fait de mon envie grandissante de découvrir des aspects plus spécifiques ou plus différents du domaine de la donnée. 
+                            <br><br>Mes réflexions vis-à-vis de mes objectifs personnels d'études m'ont poussée à me renseigner sur des formations à effectuer à la fin du BUT Science des données. 
+                            <br>Le domaine de la géomatique m'intéressant fortement, je me suis renseignée auprès d'un professionnel de ce milieu et il semblerait que l'option d'un master mention Géomatique soit la plus logique.
+                            <br>Cependant, je me laisse encore le temps de la réflexion durant cette fin de deuxième année et le début de la troisième année, avant de prendre une décision « définitive ».
+
+                        </p>
+                    </div>
+                </div>
+                <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="previous-bilan">
+                <a href="bilan_1ere_annee.pdf" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Consulter mon bilan de première année
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <!-- <section id="contact" class="section-contact">
+        <h2>Me contacter</h2>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/xwpbvjkw" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Envoyer
+                </button>
+            </form>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/lola-dixneuf-701a57298" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:lola.dixneuf@etu.univ-poitiers.fr"><i class="fas fa-envelope"></i></a>
+                <!--<a href="#" target="_blank"><i class="fab fa-github"></i></a>-->
+            </div>
+            <p>&copy; 2025 Lola Dixneuf.</p>
+        </div>
+    </footer>
+
+    <!-- Modal pour les ressources du projet SIG -->
+    <div id="sig-resources" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Ressources du projet SIG McDonald's</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-resources">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4 class="resource-title">McDonalds par région</h4>
+                        <p class="resource-description">Fichier Excel du nombre de McDonalds par région</p>
+                    </div>
+                    <a href="sig_projet_mcdo/mcdos_par_region.xlsx" class="resource-download" download>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
