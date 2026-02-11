@@ -971,6 +971,34 @@ section h2 {
     transform: translateY(-2px);
 }
 
+
 .previous-bilan .btn i {
     margin-right: 8px;
-} 
+}
+
+/* Added CSS for JS functionality */
+/* Navbar Scroll Behavior */
+.navbar.scroll-up {
+    transform: translateY(0);
+}
+
+.navbar.scroll-down {
+    transform: translateY(-100%);
+}
+
+/* Animation Classes */
+.animate {
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Ensure sections are hidden before animation if they have the animation logic applied */
+section:not(.hero) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
