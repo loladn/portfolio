@@ -376,6 +376,7 @@ section h2 {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -831,7 +832,8 @@ section h2 {
 }
 
 /* Images horizontales */
-#img1, #img2 {
+#img1,
+#img2 {
     width: 350px;
     height: 280px;
 }
@@ -907,12 +909,13 @@ section h2 {
     .about-images {
         grid-template-columns: 300px 300px 240px;
     }
-    
-    #img1, #img2 {
+
+    #img1,
+    #img2 {
         width: 300px;
         height: 240px;
     }
-    
+
     #img3 {
         width: 240px;
         height: 300px;
@@ -923,12 +926,13 @@ section h2 {
     .about-images {
         grid-template-columns: 260px 260px 208px;
     }
-    
-    #img1, #img2 {
+
+    #img1,
+    #img2 {
         width: 260px;
         height: 208px;
     }
-    
+
     #img3 {
         width: 208px;
         height: 260px;
@@ -946,7 +950,9 @@ section h2 {
         padding: 1rem;
     }
 
-    #img1, #img2, #img3 {
+    #img1,
+    #img2,
+    #img3 {
         width: 100%;
         height: 300px;
     }
@@ -971,6 +977,137 @@ section h2 {
     transform: translateY(-2px);
 }
 
+
 .previous-bilan .btn i {
     margin-right: 8px;
-} 
+}
+
+/* Added CSS for JS functionality */
+/* Navbar Scroll Behavior */
+.navbar.scroll-up {
+    transform: translateY(0);
+}
+
+.navbar.scroll-down {
+    transform: translateY(-100%);
+}
+
+/* Animation Classes */
+.animate {
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Ensure sections are hidden before animation if they have the animation logic applied */
+section:not(.hero) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+
+/* Alternance Section */
+.alternance-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.alternance-card {
+    background: var(--primary-medium);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--gray-light);
+    transition: var(--transition);
+}
+
+.alternance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+.alternance-logo {
+    text-align: center;
+    min-width: 200px;
+}
+
+.alternance-logo i {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.alternance-logo h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.alternance-content {
+    flex: 1;
+    text-align: left;
+}
+
+.alternance-content h4 {
+    color: var(--accent-light);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.alternance-content .date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--primary-dark);
+    border-radius: 12px;
+}
+
+.alternance-content p {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.alternance-tasks {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.alternance-tasks li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.alternance-tasks li::before {
+    content: '▹';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .alternance-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .alternance-content {
+        text-align: center;
+    }
+
+    .alternance-tasks {
+        text-align: left;
+        display: inline-block;
+    }
+}
