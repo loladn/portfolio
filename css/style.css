@@ -96,6 +96,36 @@ body {
     cursor: pointer;
 }
 
+.burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+.burger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar.scroll-down {
+    transform: translateY(-100%);
+}
+
+.navbar.scroll-up {
+    transform: translateY(0);
+    background-color: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(10px);
+}
+
 .bar {
     width: 25px;
     height: 3px;
@@ -371,6 +401,11 @@ section h2 {
 }
 
 /* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
