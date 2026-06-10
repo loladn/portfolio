@@ -1059,53 +1059,21 @@ section h2 {
 
 /* -- Timeline -- */
 .parcours-timeline {
-    position: relative;
-    padding-left: 4px;
-}
-
-.parcours-timeline::before {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 16px;
-    bottom: 32px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent), rgba(187, 255, 190, 0.35));
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .timeline-item {
     display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding-bottom: 28px;
-    position: relative;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
 }
 
-.timeline-item:last-child {
-    padding-bottom: 0;
-}
-
-.timeline-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 2px solid var(--white);
-    box-shadow: 0 0 0 2px var(--accent);
-    flex-shrink: 0;
-    margin-top: 5px;
-    position: relative;
-    z-index: 1;
-}
-
-.timeline-item.active .timeline-dot {
-    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--accent);
-}
-
-.timeline-item.future .timeline-dot {
-    background: var(--white);
-    border: 2px solid var(--accent-light);
-    box-shadow: 0 0 0 2px var(--accent-light);
+.timeline-item.active {
+    background: rgba(0, 153, 124, 0.05);
 }
 
 .timeline-content {
@@ -1120,12 +1088,11 @@ section h2 {
     height: 36px;
     object-fit: contain;
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 4px rgba(0, 43, 40, 0.1));
 }
 
 .timeline-item.future .timeline-content img {
-    opacity: 0.45;
-    filter: grayscale(0.4);
+    opacity: 0.4;
+    filter: grayscale(0.3);
 }
 
 .timeline-text {
@@ -1154,19 +1121,25 @@ section h2 {
     line-height: 1.3;
 }
 
+.timeline-item.future .timeline-title {
+    opacity: 0.6;
+}
+
 .timeline-place {
     font-size: 0.76rem;
     color: var(--text-secondary);
 }
 
+.timeline-item.future .timeline-place {
+    opacity: 0.6;
+}
+
 /* -- Card alternance -- */
 .alternance-card {
-    background: var(--white);
-    border: 1px solid var(--gray);
-    border-left: 4px solid var(--accent);
+    background: var(--primary-dark);
     border-radius: 12px;
     padding: 28px 30px;
-    box-shadow: 0 4px 24px rgba(0, 43, 40, 0.07);
+    box-shadow: 0 2px 16px rgba(0, 43, 40, 0.06);
 }
 
 .alternance-card-header {
