@@ -66,7 +66,7 @@
             <div class="parcours-timeline">
                 <div class="timeline-item active">
                     <div class="timeline-content">
-                        <img src="images/logos/but_sd_niort.png" alt="BUT Science des Données">
+                        <a href="https://iut-niort.univ-poitiers.fr/" target="_blank" rel="noopener noreferrer"><img src="images/logos/but_sd_niort.png" alt="BUT Science des Données"></a>
                         <div class="timeline-text">
                             <span class="timeline-date">2023 – 2026</span>
                             <span class="timeline-title">BUT Science des Données</span>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="timeline-item active">
                     <div class="timeline-content">
-                        <img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs TER Centre Val de Loire">
+                        <a href="https://www.sncf-voyageurs.com/" target="_blank" rel="noopener noreferrer"><img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs TER Centre Val de Loire"></a>
                         <div class="timeline-text">
                             <span class="timeline-date">2024 – 2026</span>
                             <span class="timeline-title">Alternance Data Analyste production</span>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="timeline-item future">
                     <div class="timeline-content">
-                        <img src="images/logos/efrei.png" alt="EFREI Paris">
+                        <a href="https://www.efrei.fr/" target="_blank" rel="noopener noreferrer"><img src="images/logos/efrei.png" alt="EFREI Paris"></a>
                         <div class="timeline-text">
                             <span class="timeline-date">2026 – 2029</span>
                             <span class="timeline-title">Cycle Ingénieur Big Data & Machine Learning</span>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="timeline-item future">
                     <div class="timeline-content">
-                        <img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs TER Nouvelle Aquitaine">
+                        <a href="https://www.sncf-voyageurs.com/" target="_blank" rel="noopener noreferrer"><img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs TER Nouvelle Aquitaine"></a>
                         <div class="timeline-text">
                             <span class="timeline-date">2026 – 2029</span>
                             <span class="timeline-title">Alternance ingénieure Data</span>
@@ -109,7 +109,7 @@
             <!-- Card alternance SNCF -->
             <div class="alternance-card">
                 <div class="alternance-card-header">
-                    <img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs">
+                    <a href="https://www.sncf-voyageurs.com/" target="_blank" rel="noopener noreferrer"><img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs"></a>
                     <div>
                         <h3>Alternante Data Analyst</h3>
                         <span class="alternance-meta">SNCF Voyageurs · TER Centre Val de Loire · Tours</span>
@@ -118,21 +118,21 @@
                 <p class="alternance-desc">Direction de Production de l'Opérationnel — automatisation de tâches, fiabilisation d'outils décisionnels et valorisation de la donnée au service de la performance ferroviaire régionale.</p>
                 <p class="alternance-card-label">Quelques projets</p>
                 <div class="alternance-projects">
-                    <div class="alt-project">
+                    <div class="alt-project" data-slide-src="slides/projet_reservations_velos.pdf">
                         <span class="alt-project-icon"><i class="fas fa-bicycle"></i></span>
                         <div>
                             <strong>Suivi des réservations vélos</strong>
                             <p>Architecture de données croisant roulements réels et capacités disponibles à la vente — alertes visuelles de surréservation pour le marketing.</p>
                         </div>
                     </div>
-                    <div class="alt-project">
+                    <div class="alt-project" data-slide-src="slides/projet_note_quotidienne.pdf">
                         <span class="alt-project-icon"><i class="fas fa-chart-line"></i></span>
                         <div>
                             <strong>Supervision de la Note Quotidienne TER</strong>
                             <p>Fiabilisation de l'extraction API MesurTER avec logs d'erreurs — traçabilité des anomalies pour un envoi final à la région.</p>
                         </div>
                     </div>
-                    <div class="alt-project">
+                    <div class="alt-project" data-slide-src="slides/projet_info_voyageur.pdf">
                         <span class="alt-project-icon"><i class="fas fa-train"></i></span>
                         <div>
                             <strong>Aide à la décision — Information Voyageur</strong>
@@ -655,6 +655,19 @@
             <p>&copy; 2026 Lola Dixneuf.</p>
         </div>
     </footer>
+
+    <!-- Modal slide projets alternance -->
+    <div id="modal-slide" class="modal">
+        <div class="modal-content modal-slide-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="slide-modal-title">Présentation du projet</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-slide-body">
+                <iframe id="slide-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal pour les ressources du projet SIG -->
     <div id="sig-resources" class="modal">
