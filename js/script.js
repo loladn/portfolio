@@ -136,4 +136,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-}); 
+});
+
+// Slide modal — projets alternance
+document.addEventListener('DOMContentLoaded', () => {
+    const slideModal = document.getElementById('modal-slide');
+    if (!slideModal) return;
+    const slideIframe = document.getElementById('slide-iframe');
+    const slideTitle = document.getElementById('slide-modal-title');
+
+    document.querySelectorAll('.alt-project[data-slide-src]').forEach(project => {
+        project.addEventListener('click', () => {
+            slideIframe.src = project.dataset.slideSrc;
+            slideTitle.textContent = project.querySelector('strong').textContent;
+            slideModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Vide l'iframe à la fermeture (arrête le rendu PDF)
+    new MutationObserver(() => {
+        if (!slideModal.classList.contains('active')) {
+            slideIframe.src = '';
+        }
+    }).observe(slideModal, { attributes: true, attributeFilter: ['class'] });
+});

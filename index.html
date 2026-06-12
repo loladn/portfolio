@@ -23,8 +23,9 @@
             </div>
             <ul class="nav-links">
                 <!--<li><a href="#accueil">Accueil</a></li>-->
+                <li><a href="#parcours">Parcours</a></li>
                 <li><a href="#a-propos">À propos de moi</a></li>
-                <li><a href="#projets">Projets</a></li>
+                <li><a href="projets.html">Projets</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#bilan">Bilan</a></li>
                 <!--<li><a href="#contact">Contact</a></li>-->
@@ -42,17 +43,103 @@
         <div class="hero-content">
             <div class="profile-container">
                 <div class="profile-image">
-                    <img src="images/profile.jpg" alt="Lola Dixneuf">
+                    <img src="images/lola_profil_detoure.png" alt="Lola Dixneuf">
                 </div>
             </div>
-            <h1>Lola Dixneuf</h1>
-            <h2>Étudiante en Science des données</h2>
-            <!--<p>Gestion et analyse de données</p>-->
+            <span class="hero-name-badge">Lola Dixneuf</span>
+            <h1>Étudiante en 3ème année de<br>BUT Science des Données</h1>
+            <h2>Alternante Data Analyst · SNCF Voyageurs<br><span class="hero-h2-location">TER Centre Val de Loire</span></h2>
             <div class="cta-buttons">
-                <a href="cv.pdf" class="btn btn-primary" download target="_blank">
+                <a href="cv_2026.pdf" class="btn btn-primary" download target="_blank">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
-                <!--<a href="#contact" class="btn btn-secondary">Me contacter</a>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Parcours & Alternance -->
+    <section id="parcours" class="section-parcours">
+        <h2>Mon Parcours & Alternance</h2>
+        <div class="parcours-wrapper">
+
+            <!-- Timeline verticale -->
+            <div class="parcours-timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-content">
+                        <a href="https://iutp.univ-poitiers.fr/sd/" target="_blank" rel="noopener noreferrer"><img src="images/logos/but_sd_niort.png" alt="BUT Science des Données"></a>
+                        <div class="timeline-text">
+                            <span class="timeline-date">2023 – 2026</span>
+                            <span class="timeline-title">BUT Science des Données</span>
+                            <span class="timeline-place">IUT de Niort · Parcours VCOD dès BUT2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="timeline-content">
+                        <a href="https://www.sncf-voyageurs.com/" target="_blank" rel="noopener noreferrer"><img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs TER Centre Val de Loire"></a>
+                        <div class="timeline-text">
+                            <span class="timeline-date">2024 – 2026</span>
+                            <span class="timeline-title">Alternance Data Analyste production</span>
+                            <span class="timeline-place">SNCF Voyageurs · TER Centre Val de Loire · Tours</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="timeline-content">
+                        <a href="https://www.efrei.fr/" target="_blank" rel="noopener noreferrer"><img src="images/logos/efrei.png" alt="EFREI Paris"></a>
+                        <div class="timeline-text">
+                            <span class="timeline-date">2026 – 2029</span>
+                            <span class="timeline-title">Cycle Ingénieur Big Data & Machine Learning</span>
+                            <span class="timeline-place">EFREI · SNCF Voyageurs TER Nouvelle Aquitaine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="timeline-content">
+                        <a href="https://www.sncf-voyageurs.com/" target="_blank" rel="noopener noreferrer"><img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs TER Nouvelle Aquitaine"></a>
+                        <div class="timeline-text">
+                            <span class="timeline-date">2026 – 2029</span>
+                            <span class="timeline-title">Alternance ingénieure Data</span>
+                            <span class="timeline-place">SNCF Voyageurs · TER Nouvelle Aquitaine · Bordeaux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card alternance SNCF -->
+            <div class="alternance-card">
+                <div class="alternance-card-header">
+                    <a href="https://www.sncf-voyageurs.com/" target="_blank" rel="noopener noreferrer"><img src="images/logos/sncf_voyageurs.png" alt="SNCF Voyageurs"></a>
+                    <div>
+                        <h3>Alternante Data Analyst</h3>
+                        <span class="alternance-meta">SNCF Voyageurs · TER Centre Val de Loire · Tours</span>
+                    </div>
+                </div>
+                <p class="alternance-desc">Direction de Production de l'Opérationnel — automatisation de tâches, fiabilisation d'outils décisionnels et valorisation de la donnée au service de la performance ferroviaire régionale.</p>
+                <p class="alternance-card-label">Quelques projets</p>
+                <div class="alternance-projects">
+                    <div class="alt-project" data-slide-src="slides/projet_reservations_velos.pdf">
+                        <span class="alt-project-icon"><i class="fas fa-bicycle"></i></span>
+                        <div>
+                            <strong>Suivi des réservations vélos</strong>
+                            <p>Architecture de données croisant roulements réels et capacités disponibles à la vente — alertes visuelles de surréservation pour le marketing.</p>
+                        </div>
+                    </div>
+                    <div class="alt-project" data-slide-src="slides/projet_note_quotidienne.pdf">
+                        <span class="alt-project-icon"><i class="fas fa-chart-line"></i></span>
+                        <div>
+                            <strong>Supervision de la Note Quotidienne TER</strong>
+                            <p>Fiabilisation de l'extraction API MesurTER avec logs d'erreurs — traçabilité des anomalies pour un envoi final à la région.</p>
+                        </div>
+                    </div>
+                    <div class="alt-project" data-slide-src="slides/projet_info_voyageur.pdf">
+                        <span class="alt-project-icon"><i class="fas fa-train"></i></span>
+                        <div>
+                            <strong>Aide à la décision — Information Voyageur</strong>
+                            <p>Modélisation Power BI du retard moyen par incident pour maximiser la fiabilité — fiches pratiques standardisées pour 5 gares majeures.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -105,303 +192,64 @@
 
     <!-- Section Projets -->
     <section id="projets" class="section-projects">
-        <h2>Mes projets universitaires</h2>
-        <div class="projects-container">
-            <div class="projects-filters">
-                <div class="filter-group">
-                    <h4>Année</h4>
-                    <div class="filter-buttons year-filters">
-                        <button class="filter-btn active" data-year="all">Tous</button>
-                        <button class="filter-btn" data-year="1">1ère année</button>
-                        <button class="filter-btn" data-year="2">2ème année</button>
-                    </div>
+        <h2>Mes Projets</h2>
+        <p class="section-subtitle">Projets BUT3 — en cours de réalisation</p>
+        <div class="featured-projects-grid">
+
+            <!-- Placeholder BUT3 — Chatbot LLM -->
+            <div class="project-card" data-year="3" data-domain="info">
+                <div class="project-image">
+                    <img src="images/but_sd_placeholder.png" alt="Chatbot LLM">
+                    <div class="project-icon"><i class="fas fa-robot"></i></div>
                 </div>
-                <div class="filter-group">
-                    <h4>Domaine</h4>
-                    <div class="filter-buttons domain-filters">
-                        <button class="filter-btn active" data-domain="all">Tous</button>
-                        <button class="filter-btn" data-domain="info">Informatique</button>
-                        <button class="filter-btn" data-domain="stats">Statistiques</button>
-                        <!--<button class="filter-btn" data-domain="bi">Business Intelligence</button>-->
-                        <button class="filter-btn" data-domain="other">Autre</button>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">LLM</span>
+                        <span class="project-tag">IA</span>
                     </div>
+                    <h3 class="project-title">Chatbot conversationnel — LLM</h3>
+                    <p class="project-description">Conception d'un agent conversationnel exploitant un grand modèle de langage pour répondre à des questions contextualisées.</p>
                 </div>
             </div>
-            
-            <div class="projects-grid">
-                <!-- Premier exemple de projet -->
-                <div class="project-card" data-year="2" data-domain="info">
-                    <div class="project-image">
-                        <img src="projets/but2_projet_airbnb/vue_1.png" alt="Projet Airbnb"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Web</span>
-                            <span class="project-tag">JavaScript</span>
-                        </div>
-                        <h3 class="project-title">Programmation web données Airbnb</h3>
-                        <p class="project-description">
-                            Création d'un site web dynamique pour la visualisation des données Airbnb des logements de la ville de Paris, grâce à des graphiques variés et interactifs.
-                        </p>
-                        <div class="project-links">
-                            <a href="projets/but2_projet_airbnb/ppt_vcod_airbnb.pdf" class="project-link"
-                                target="_blank"><i class="fas fa-file-pdf"></i> Présentation PDF</a>
-                            <a href="#" class="project-link" onclick="alert('Fichier à venir')"><i
-                                    class="fas fa-images"></i> Captures</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card" data-year="2" data-domain="info">
-                    <div class="project-image">
-                        <img src="projets/but2_sig_projet_mcdo/capture_carte.jpg" alt="Projet SIG McDonalds"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">SIG</span>
-                            <span class="project-tag">QGIS</span>
-                        </div>
-                        <h3 class="project-title">Étude SIG de l'implantation des McDonald's en France</h3>
-                        <p class="project-description">
-                            Étude de l'implantation des restaurants McDonald's en France, à partir d'une base de données SIG.
-                        </p>
-                        <div class="project-links">
-                            <a href="projets/but2_sig_projet_mcdo/loladixneuf_compterendu.pdf" class="project-link" target="_blank">
-                                <i class="fas fa-file-pdf"></i>
-                                Rapport PDF
-                            </a>
-                            <a href="#" class="project-link" data-modal="sig-resources">
-                                <i class="fas fa-images"></i>
-                                Voir les ressources
-                            </a>
-                        </div>
-                    </div>
+            <!-- Placeholder BUT3 — Réseau de neurones -->
+            <div class="project-card" data-year="3" data-domain="stats">
+                <div class="project-image">
+                    <img src="images/but_sd_placeholder.png" alt="Réseau de neurones">
+                    <div class="project-icon"><i class="fas fa-brain"></i></div>
                 </div>
-                
-                <div class="project-card" data-year="2" data-domain="info">
-                    <div class="project-image">
-                        <img src="projets/but2_sae_php_accidentologie/capture_graphiques.png"
-                            alt="Projet web accidentologie" onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-code"></i></div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Keras</span>
+                        <span class="project-tag">Deep Learning</span>
                     </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">PHP</span>
-                            <span class="project-tag">MySQL</span>
-                            <span class="project-tag">JavaScript</span>
-                        </div>
-                        <h3 class="project-title">Site web dynamique accidentologie</h3>
-                        <p class="project-description">
-                            Création d'un site web dynamique pour la visualisation des accidents corporels, à partir d'une base de données OpenData.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link" onclick="alert('Fichier à venir')"><i
-                                    class="fas fa-file-code"></i> Code source</a>
-                            <a href="#" class="project-link" onclick="alert('Fichier à venir')"><i
-                                    class="fas fa-images"></i> Captures</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="2" data-domain="info">
-                    <div class="project-image">
-                        <img src="projets/but2_vba_vcod/capture_excel.png" alt="Projet vba"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-file-excel"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">VBA</span>
-                            <span class="project-tag">Automatisation</span>
-                        </div>
-                        <h3 class="project-title">Recrutement section sportive football</h3>
-                        <p class="project-description">
-                            Application de saisie des performances des candidats le jour du recrutement pour établir un classement et sélectionner les meilleurs.
-                        </p>
-                        <!--<div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-file-code"></i>
-                                Code source
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-chart-line"></i>
-                                Visualisations
-                            </a>
-                        </div>-->
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="2" data-domain="stats">
-                    <div class="project-image">
-                        <img src="projets/but2_series_temp_norvege/capture_rapport_norvege.jpg" alt="Projet économie Norvège" onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Excel</span>
-                            <span class="project-tag">Séries temporelles</span>
-                            <span class="project-tag">OCDE</span>
-                        </div>
-                        <h3 class="project-title">Étude des enjeux économiques de la Norvège</h3>
-                        <p class="project-description">
-                            Analyse statistique des importations norvégiennes, afin de prévoir les évolutions économiques de la Norvège et de ses partenaires commerciaux.
-                        </p>
-                        <div class="project-links">
-                            <!--<a href="#" class="project-link">
-                                <i class="fas fa-images"></i>
-                                Voir les captures
-                            </a>-->
-                            <a href="projets/but2_series_temp_norvege/sae_importations_norvege_lola_dixneuf.pdf" class="project-link" target="_blank">
-                                <i class="fas fa-file-pdf"></i>
-                                Rapport PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="2" data-domain="other">
-                    <div class="project-image">
-                        <img src="projets/but2_poster_science/capture_poster.png" alt="Projet poster"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-image"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Communication</span>
-                            <span class="project-tag">Data visualisation</span>
-                        </div>
-                        <h3 class="project-title">Poster scientifique sur la Data visualisation</h3>
-                        <p class="project-description">
-                            Réalisation d'un poster scientifique sur la Data visualisation, à l'occasion de la fête de la science.
-                        </p>
-                        <div class="project-links">
-                            <a href="projets/but2_poster_science/poster_dataviz_entreprise-1.pdf" class="project-link" target="_blank">
-                                <i class="fas fa-file-pdf"></i>
-                                Poster PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BUT1 Projects -->
-                <div class="project-card" data-year="1" data-domain="other">
-                    <div class="project-image">
-                        <img src="projets/but1_sae_finale/capture.png" alt="Projet final"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Power BI</span>
-                            <span class="project-tag">Méthode agile</span>
-                        </div>
-                        <h3 class="project-title">Projet final, analyse de données et reporting Calyxis</h3>
-                        <p class="project-description">
-                            Analyse de données et reporting pour Calyxis, observatoire spécialisé dans les accidents de la vie courante.
-                        </p>
-                        <div class="project-links">
-                            <a href="projets/but1_sae_finale/presentation.pdf" class="project-link" target="_blank"><i
-                                    class="fas fa-file-pdf"></i> Présentation PDF</a>
-                            <a href="#" class="project-link" onclick="alert('Fichier à venir')"><i
-                                    class="fas fa-images"></i> Captures</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="1" data-domain="stats">
-                    <div class="project-image">
-                        <img src="projets/but1_sae_echantillonnage/paca.png" alt="Projet échantillonnage"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-calculator"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">R</span>
-                            <span class="project-tag">Estimation</span>
-                        </div>
-                        <h3 class="project-title">Échantillonnage et estimation région Provence-Alpes-Côte d'Azur</h3>
-                        <p class="project-description">
-                            Étude d'examination de la population de la région Provence-Alpes-Côte d'Azur, grâce à la réalisation d'un échantillonnage et d'une estimation de la population.
-                        </p>
-                        <div class="project-links">
-                            <a href="projets/but1_sae_echantillonnage/compte_rendu_sae_echantillon.pdf" class="project-link" target="_blank">
-                                <i class="fas fa-file-pdf"></i>
-                                Rapport PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="1" data-domain="stats">
-                    <div class="project-image">
-                        <img src="projets/but1_sae_logement/capture_logement.png" alt="Projet logement"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-home"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Étude</span>
-                            <span class="project-tag">Excel</span>
-                        </div>
-                        <h3 class="project-title">Étude logements étudiants Université de Poitiers</h3>
-                        <p class="project-description">
-                            Étude de la situation de logement des étudiants de l'Université de Poitiers, à partir des données d'une enquête.
-                        </p>
-                        <div class="project-links">
-                            <a href="projets/but1_sae_logement/sae_logement.pdf" class="project-link" target="_blank"><i
-                                    class="fas fa-file-pdf"></i> Rapport PDF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="1" data-domain="other">
-                    <div class="project-image">
-                        <img src="projets/but1_sae_poujoulat/logo_poujoulat.png" alt="Projet poujoulat"
-                            onerror="this.src='images/but_sd_fond.png';">
-                        <div class="project-icon"><i class="fas fa-industry"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Gestion</span>
-                            <span class="project-tag">Excel</span>
-                        </div>
-                        <h3 class="project-title">Étude chiffre d'affaires de la société Poujoulat</h3>
-                        <p class="project-description">Étude du chiffre d'affaires de la société Poujoulat.</p>
-                        <div class="project-links">
-                            <a href="projets/but1_sae_poujoulat/dossier_etude.pdf" class="project-link"
-                                target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-year="1" data-domain="stats">
-                    <div class="project-image">
-                        <img src="images/but_sd_fond.png" alt="Projet R">
-                        <div class="project-icon"><i class="fas fa-chart-area"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">R</span>
-                            <span class="project-tag">Régression</span>
-                            <span class="project-tag">Statistiques</span>
-                        </div>
-                        <h3 class="project-title">Modèles de régression sous R</h3>
-                        <p class="project-description">Réalisation d'une étude statistique et mise en place de modèles
-                            de régression avec le langage R.</p>
-                        <div class="project-links">
-                            <a href="projets/but1_sae_regression_r/texte_explicatif.pdf" class="project-link"
-                                target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
-                        </div>
-                    </div>
+                    <h3 class="project-title">Modélisation par réseau de neurones</h3>
+                    <p class="project-description">Implémentation et entraînement d'un réseau de neurones pour la classification de données réelles — comparaison de modèles.</p>
                 </div>
             </div>
+
+            <!-- Placeholder BUT3 — App web Dash -->
+            <div class="project-card" data-year="3" data-domain="info">
+                <div class="project-image">
+                    <img src="images/but_sd_placeholder.png" alt="App web Dash">
+                    <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Plotly Dash</span>
+                        <span class="project-tag">Dataviz</span>
+                    </div>
+                    <h3 class="project-title">Application web de visualisation — Dash</h3>
+                    <p class="project-description">Développement d'un tableau de bord interactif avec Python Dash pour l'exploration et la visualisation de données métier.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="featured-cta">
+            <a href="projets.html" class="btn btn-secondary">Voir tous mes projets <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
@@ -483,14 +331,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Section Alternance -->
-    <!-- <section id="alternance" class="section-alternance">
-        <h2>Mon alternance</h2>
-        <div class="alternance-content">
-        </div>
-    </section> -->
-
 
     <!-- Section Bilan Personnel -->
     <section id="bilan" class="section-bilan">
@@ -576,6 +416,19 @@
             <p>&copy; 2026 Lola Dixneuf.</p>
         </div>
     </footer>
+
+    <!-- Modal slide projets alternance -->
+    <div id="modal-slide" class="modal">
+        <div class="modal-content modal-slide-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="slide-modal-title">Présentation du projet</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-slide-body">
+                <iframe id="slide-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal pour les ressources du projet SIG -->
     <div id="sig-resources" class="modal">
