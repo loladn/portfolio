@@ -1369,3 +1369,111 @@ section h2 {
     }
     .page-header { padding: 90px 1.5rem 32px; }
 }
+
+/* ===== À PROPOS REFONTE ===== */
+.about-bio {
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+.about-bio p {
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+.about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.about-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--primary-medium);
+    border: 1px solid var(--gray-light);
+    border-radius: 50px;
+    padding: 0.65rem 1.3rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0, 43, 40, 0.06);
+    transition: var(--transition);
+    cursor: default;
+}
+.about-chip i {
+    color: var(--accent);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.about-chip:hover {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 153, 124, 0.22);
+}
+.about-chip:hover i { color: var(--white); }
+
+/* ===== BILAN CARDS ===== */
+.bilan-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.bilan-card {
+    background: var(--primary-medium);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gray-light);
+    box-shadow: 0 4px 20px rgba(0, 43, 40, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+.bilan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 43, 40, 0.12);
+}
+.bilan-card-header {
+    padding: 1.25rem 1.5rem;
+    color: var(--white);
+}
+.bilan-card-header.but1 { background: var(--accent-dark); }
+.bilan-card-header.but2 { background: var(--accent); }
+.bilan-card-header.but3 { background: var(--text-primary); }
+.bilan-card-header h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+.bilan-card-header span {
+    font-size: 0.78rem;
+    opacity: 0.85;
+    display: block;
+}
+.bilan-card-body {
+    padding: 1.25rem 1.5rem;
+    flex: 1;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+.bilan-card-footer {
+    padding: 0 1.5rem 1.5rem;
+    text-align: center;
+}
+.bilan-card-footer .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.4rem;
+}
+
+@media (max-width: 900px) {
+    .bilan-cards { grid-template-columns: 1fr; max-width: 500px; }
+}
