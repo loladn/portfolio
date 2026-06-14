@@ -10,6 +10,30 @@
     <meta property="og:type" content="website">
     <title>Portfolio - Lola Dixneuf</title>
     <link rel="icon" href="images/profile.jpg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sncf: {
+                            light: '#eefcf1',
+                            DEFAULT: '#005A4C',
+                            accent: '#1e8575'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .modal-sncf { display: flex; z-index: 1001; transition: opacity 0.3s ease-in-out; }
+        .modal-sncf .sncf-modal-inner { transition: transform 0.3s ease-in-out; }
+        .modal-sncf.show { opacity: 1; pointer-events: auto; }
+        .modal-sncf.show .sncf-modal-inner { transform: scale(1) translateY(0); }
+        .modal-sncf.hide { opacity: 0; pointer-events: none; }
+        .modal-sncf.hide .sncf-modal-inner { transform: scale(0.95) translateY(10px); }
+    </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -50,7 +74,7 @@
             <h1>Étudiante en 3ème année de<br>BUT Science des Données</h1>
             <h2>Alternante Data Analyst · SNCF Voyageurs<br><span class="hero-h2-location">TER Centre Val de Loire</span></h2>
             <div class="cta-buttons">
-                <a href="cv_2026.pdf" class="btn btn-primary" download target="_blank">
+                <a href="cv_2026_lola_dixneuf.pdf" class="btn btn-primary" download target="_blank">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
             </div>
@@ -118,21 +142,21 @@
                 <p class="alternance-desc">Direction de Production de l'Opérationnel — automatisation de tâches, fiabilisation d'outils décisionnels et valorisation de la donnée au service de la performance ferroviaire régionale.</p>
                 <p class="alternance-card-label">Quelques projets</p>
                 <div class="alternance-projects">
-                    <div class="alt-project" data-slide-src="slides/projet_reservations_velos.pdf">
+                    <div class="alt-project" onclick="openModal('modal-velos')">
                         <span class="alt-project-icon"><i class="fas fa-bicycle"></i></span>
                         <div>
                             <strong>Suivi des réservations vélos</strong>
                             <p>Architecture de données croisant roulements réels et capacités disponibles à la vente — alertes visuelles de surréservation pour le marketing.</p>
                         </div>
                     </div>
-                    <div class="alt-project" data-slide-src="slides/projet_note_quotidienne.pdf">
+                    <div class="alt-project" onclick="openModal('modal-note')">
                         <span class="alt-project-icon"><i class="fas fa-chart-line"></i></span>
                         <div>
                             <strong>Supervision de la Note Quotidienne TER</strong>
                             <p>Fiabilisation de l'extraction API MesurTER avec logs d'erreurs — traçabilité des anomalies pour un envoi final à la région.</p>
                         </div>
                     </div>
-                    <div class="alt-project" data-slide-src="slides/projet_info_voyageur.pdf">
+                    <div class="alt-project" onclick="openModal('modal-iv')">
                         <span class="alt-project-icon"><i class="fas fa-train"></i></span>
                         <div>
                             <strong>Aide à la décision — Information Voyageur</strong>
@@ -348,7 +372,8 @@
                     <span>Fondamentaux & découverte</span>
                 </div>
                 <div class="bilan-card-body">
-                    Premiers pas dans la data — statistiques, programmation (Python, R) et bases de données. Une année structurante qui a confirmé mon orientation et posé les bases d'une rigueur méthodologique.
+                    Dès le début de l'année, j'ai découvert un domaine intéressant où les mathématiques, les statistiques et l'informatique se combinent pour former la science des données.
+                    Mes résultats ont été globalement satisfaisants, surtout dans les modules de programmation, lié au traitement de données, ainsi que ...
                 </div>
                 <div class="bilan-card-footer">
                     <a href="bilan_1ere_annee.pdf" class="btn btn-secondary" target="_blank">
@@ -363,8 +388,7 @@
                     <span>Spécialisation & alternance</span>
                 </div>
                 <div class="bilan-card-body">
-                    Spécialisation en visualisation (parcours VCOD), diversification des outils (Tableau, Business Objects, SIG/QGIS) et début de l'alternance chez SNCF Voyageurs — premier contact concret avec la donnée en contexte ferroviaire.
-                </div>
+                    Tout d'abord, le début de cette deuxième année dans la formation a été marqué par une diversité des cours proposés, plus large que l'année précédente, grâce aux enseignements de nombreux.ses intervenant.es professionnel.les, nous proposant des cours de maîtrise de logiciels et langages de ...                </div>
                 <div class="bilan-card-footer">
                     <a href="bilan_2eme_annee.pdf" class="btn btn-secondary" target="_blank">
                         <i class="fas fa-file-pdf"></i> Lire le bilan
@@ -378,8 +402,7 @@
                     <span>Conception & autonomie technique</span>
                 </div>
                 <div class="bilan-card-body">
-                    Montée en autonomie — Big Data, Machine Learning, projets Spark/Hadoop et Deep Learning. Transition de la maintenance vers la conception au sein de SNCF Voyageurs, avec des recommandations formulées aux équipes opérationnelles.
-                </div>
+                    L'achèvement de cette troisième année de Bachelor Universitaire de Technologie (BUT) en Science des Données marque la fin d'une première étape fondamentale dans ma construction professionnelle. Ces trois années passées à l'IUT de Niort, couplées à mes deux années d'alternance au sein de la Direction...                
                 <div class="bilan-card-footer">
                     <a href="bilan_3eme_annee.pdf" class="btn btn-secondary" target="_blank">
                         <i class="fas fa-file-pdf"></i> Lire le bilan
@@ -426,15 +449,150 @@
         </div>
     </footer>
 
-    <!-- Modal slide projets alternance -->
-    <div id="modal-slide" class="modal">
-        <div class="modal-content modal-slide-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="slide-modal-title">Présentation du projet</h3>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
+    <!-- Modals projets alternance SNCF -->
+    <div id="modal-velos" class="modal-sncf hide fixed inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeModal('modal-velos')"></div>
+        <div class="sncf-modal-inner relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <button onclick="closeModal('modal-velos')" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur text-gray-500 hover:text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="bg-sncf-light p-8 md:w-1/3 flex flex-col justify-between border-r border-green-100">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-sncf text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-800 mb-4 leading-tight">Suivi des réservations vélos</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Power BI</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">DAX</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Open Data</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Le Défi</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">Éviter les surréservations estivales en confrontant en temps réel les quotas de vente nationaux (SNCF Connect) à la capacité matérielle réelle des rames circulant le jour J.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">L'Impact</h3>
+                    <div class="bg-white p-4 rounded-2xl border border-green-100 shadow-sm">
+                        <p class="text-sncf font-medium">Anticipation visuelle immédiate des conflits permettant au marketing de geler les ventes à temps.</p>
+                    </div>
+                </div>
             </div>
-            <div class="modal-slide-body">
-                <iframe id="slide-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="p-8 md:w-2/3 bg-white flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Architecture des données</h3>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                        <img src="images/schema_suivi_resas_velo.jpg" alt="Schéma Architecture Vélos" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Aperçu du tableau de bord</h3>
+                    <div class="relative w-full h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 group">
+                        <img src="images/but_sd_placeholder.png" alt="Dashboard Vélos" class="w-full h-full object-cover blur-[6px] group-hover:blur-[2px] transition-all duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-gray-900/80 backdrop-blur text-white px-5 py-3 rounded-xl flex items-center gap-3 font-medium shadow-lg">
+                                <i class="fa-solid fa-lock"></i> Données confidentielles floutées
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-note" class="modal-sncf hide fixed inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeModal('modal-note')"></div>
+        <div class="sncf-modal-inner relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <button onclick="closeModal('modal-note')" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur text-gray-500 hover:text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="bg-sncf-light p-8 md:w-1/3 flex flex-col justify-between border-r border-green-100">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-sncf text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-800 mb-4 leading-tight">Supervision Note Quotidienne</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">API REST</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Power Automate</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">ETL</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Le Défi</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">Industrialiser la récupération des données de régularité ferroviaire face à des serveurs API instables, sans infrastructure Cloud dédiée pour les scripts Python.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">L'Impact</h3>
+                    <div class="bg-white p-4 rounded-2xl border border-green-100 shadow-sm">
+                        <p class="text-sncf font-medium">Création d'un système de gestion d'erreurs garantissant la livraison continue de la note de performance à la Région chaque matin.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 md:w-2/3 bg-white flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Architecture hybride & résilience</h3>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                        <img src="images/schema_note_quo.jpg" alt="Schéma Architecture Note Quotidienne" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Logs et suivi des erreurs</h3>
+                    <div class="relative w-full h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 group">
+                        <img src="images/but_sd_placeholder.png" alt="Logs Note Quotidienne" class="w-full h-full object-cover blur-[6px] group-hover:blur-[2px] transition-all duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-gray-900/80 backdrop-blur text-white px-5 py-3 rounded-xl flex items-center gap-3 font-medium shadow-lg">
+                                <i class="fa-solid fa-lock"></i> Données internes sécurisées
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-iv" class="modal-sncf hide fixed inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeModal('modal-iv')"></div>
+        <div class="sncf-modal-inner relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <button onclick="closeModal('modal-iv')" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur text-gray-500 hover:text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="bg-sncf-light p-8 md:w-1/3 flex flex-col justify-between border-r border-green-100">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-sncf text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-800 mb-4 leading-tight">Aide à la décision : Info Voyageur</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Data Viz</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Aide Décision</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Historisation</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Le Défi</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">Objectiver la communication client en gare en remplaçant les estimations de retard "au jugé" par des données fiables basées sur l'historique des incidents.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">L'Impact</h3>
+                    <div class="bg-white p-4 rounded-2xl border border-green-100 shadow-sm">
+                        <p class="text-sncf font-medium">Génération de fiches standardisées de "Retard à projeter" pour les agents des 5 grandes gares de la région.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 md:w-2/3 bg-white flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Processus de calcul</h3>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                        <img src="images/schema_fiabilite.jpg" alt="Schéma Architecture Info Voyageur" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Exemple de fiche générée</h3>
+                    <div class="relative w-full h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 group">
+                        <img src="images/but_sd_placeholder.png" alt="Fiche Info Voyageur" class="w-full h-full object-cover blur-[6px] group-hover:blur-[2px] transition-all duration-500 object-top">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-gray-900/80 backdrop-blur text-white px-5 py-3 rounded-xl flex items-center gap-3 font-medium shadow-lg">
+                                <i class="fa-solid fa-lock"></i> Données métiers floutées
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -467,5 +625,24 @@
 
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hide');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            modal.classList.add('hide');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-sncf.show').forEach(m => closeModal(m.id));
+            }
+        });
+    </script>
 </body>
 </html> 
