@@ -10,6 +10,30 @@
     <meta property="og:type" content="website">
     <title>Portfolio - Lola Dixneuf</title>
     <link rel="icon" href="images/profile.jpg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sncf: {
+                            light: '#eefcf1',
+                            DEFAULT: '#005A4C',
+                            accent: '#1e8575'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .modal-sncf { display: flex; z-index: 1001; transition: opacity 0.3s ease-in-out; }
+        .modal-sncf .sncf-modal-inner { transition: transform 0.3s ease-in-out; }
+        .modal-sncf.show { opacity: 1; pointer-events: auto; }
+        .modal-sncf.show .sncf-modal-inner { transform: scale(1) translateY(0); }
+        .modal-sncf.hide { opacity: 0; pointer-events: none; }
+        .modal-sncf.hide .sncf-modal-inner { transform: scale(0.95) translateY(10px); }
+    </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,13 +70,15 @@
                     <img src="images/lola_profil_detoure.png" alt="Lola Dixneuf">
                 </div>
             </div>
-            <span class="hero-name-badge">Lola Dixneuf</span>
-            <h1>Étudiante en 3ème année de<br>BUT Science des Données</h1>
-            <h2>Alternante Data Analyst · SNCF Voyageurs<br><span class="hero-h2-location">TER Centre Val de Loire</span></h2>
-            <div class="cta-buttons">
-                <a href="cv_2026.pdf" class="btn btn-primary" download target="_blank">
-                    <i class="fas fa-download"></i> Télécharger mon CV
-                </a>
+            <div class="hero-text">
+                <span class="hero-name-badge">Lola Dixneuf</span>
+                <h1>Étudiante en 3ème année de<br>BUT Science des Données</h1>
+                <h2>Alternante Data Analyst · SNCF Voyageurs<br><span class="hero-h2-location">TER Centre Val de Loire</span></h2>
+                <div class="cta-buttons">
+                    <a href="cv_2026_lola_dixneuf.pdf" class="btn btn-primary" download target="_blank">
+                        <i class="fas fa-download"></i> Télécharger mon CV
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -118,21 +144,21 @@
                 <p class="alternance-desc">Direction de Production de l'Opérationnel — automatisation de tâches, fiabilisation d'outils décisionnels et valorisation de la donnée au service de la performance ferroviaire régionale.</p>
                 <p class="alternance-card-label">Quelques projets</p>
                 <div class="alternance-projects">
-                    <div class="alt-project" data-slide-src="slides/projet_reservations_velos.pdf">
+                    <div class="alt-project" onclick="openModal('modal-velos')">
                         <span class="alt-project-icon"><i class="fas fa-bicycle"></i></span>
                         <div>
                             <strong>Suivi des réservations vélos</strong>
                             <p>Architecture de données croisant roulements réels et capacités disponibles à la vente — alertes visuelles de surréservation pour le marketing.</p>
                         </div>
                     </div>
-                    <div class="alt-project" data-slide-src="slides/projet_note_quotidienne.pdf">
+                    <div class="alt-project" onclick="openModal('modal-note')">
                         <span class="alt-project-icon"><i class="fas fa-chart-line"></i></span>
                         <div>
                             <strong>Supervision de la Note Quotidienne TER</strong>
                             <p>Fiabilisation de l'extraction API MesurTER avec logs d'erreurs — traçabilité des anomalies pour un envoi final à la région.</p>
                         </div>
                     </div>
-                    <div class="alt-project" data-slide-src="slides/projet_info_voyageur.pdf">
+                    <div class="alt-project" onclick="openModal('modal-iv')">
                         <span class="alt-project-icon"><i class="fas fa-train"></i></span>
                         <div>
                             <strong>Aide à la décision — Information Voyageur</strong>
@@ -148,16 +174,62 @@
     <section id="a-propos" class="section-about">
         <h2>À propos de moi</h2>
         <div class="about-content">
+            <p class="about-intro">
+                Bonjour, je suis étudiante en science des données à Niort. <br> J'aime me définir comme une personne curieuse, ouverte aux nouvelles expériences, et toujours motivée à m'investir aussi bien dans des projets collectifs au sein de ma formation que dans des engagements plus personnels.
+            </p>
+
+            <div class="engagement-row">
+
+                <div class="engagement-card-sm">
+                    <div class="engagement-photo-sm">
+                        <img src="images/post_cm.PNG" alt="CM réseaux sociaux BUT SD">
+                    </div>
+                    <div class="engagement-body-sm">
+                        <span class="engagement-tag communication">Communication</span>
+                        <h3>CM réseaux sociaux — BUT SD Niort</h3>
+                        <p>Alimentation des réseaux sociaux du département Science des Données, avec 3 autres CM : publication de contenus, valorisation des projets étudiants et vie de la formation.</p>
+                    </div>
+                </div>
+
+                <div class="engagement-card-sm">
+                    <div class="engagement-photo-sm">
+                        <img src="images/portes_ouvertes.jpg" alt="SAÉ Portes Ouvertes">
+                    </div>
+                    <div class="engagement-body-sm">
+                        <span class="engagement-tag pedagogie">Pédagogie</span>
+                        <h3>Portes Ouvertes IUT</h3>
+                        <p>Présentation du parcours BUT Science des Données à des lycéens lors des journées portes ouvertes de l'IUT de Niort.</p>
+                    </div>
+                </div>
+
+                <div class="engagement-card-sm">
+                    <div class="engagement-photo-sm">
+                        <img src="images/presentation_presidente.jpg" alt="SAÉ présidente université">
+                    </div>
+                    <div class="engagement-body-sm">
+                        <span class="engagement-tag representation">Représentation</span>
+                        <h3>Projet devant la présidente de l'Université de Poitiers</h3>
+                        <p>Restitution d'une SAÉ (projet) en présence de la présidente de l'Université de Poitiers, Virginie Laval.</p>
+                    </div>
+                </div>
+
+                <div class="engagement-card-sm">
+                    <div class="engagement-photo-sm">
+                        <img src="images/app180.jpg" alt="Mon apprentissage en 180 secondes">
+                    </div>
+                    <div class="engagement-body-sm">
+                        <span class="engagement-tag concours">Concours</span>
+                        <h3>Mon apprentissage en 180 secondes</h3>
+                        <p>Présentation de mon alternance chez SNCF Voyageurs en 3 minutes chrono, exercice de vulgarisation et de prise de parole publique.</p>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="about-text collapsed">
                 <div class="about-text-content">
                     <p>
-                        Bonjour, je m'appelle Lola, j'ai 19 ans et je suis étudiante en science des données à Niort. J'aime me définir comme une personne  curieuse, ouverte aux nouvelles expériences, et toujours motivée à m'impliquer dans des projets collectifs.
-                    </p>
-                    <p>
-                        Depuis deux ans, je m'investis dans le monde des festivals, une expérience qui a pris une place importante dans mon parcours personnel. J'ai commencé avec le festival local tourangeau "Superflux", dédié à la musique expérimentale, où j'ai participé à la communication en tant que bénévole. J'ai contribué à la création de contenu photo, vidéo et de témoignages pour alimenter les réseaux sociaux du festival, et cela m'a permis de découvrir l'envers du décor d'un événement culturel tout en développant des compétences concrètes en communication.
-                    </p>
-                    <p>
-                        En 2024, j'ai rejoint l'équipe bénévole du festival Terres du Son, où j'ai travaillé au sein d'un bar. Cette expérience a été particulièrement enrichissante, tant sur le plan humain que logistique. J'y ai rencontré des personnes avec qui j'ai gardé contact tout au long de l'année. Je participerai également à l'édition 2025, avec le même enthousiasme.
+                        D'un point de vue plus personnel, depuis deux ans, je m'investis dans le monde des festivals. J'ai commencé avec le festival tourangeau "Superflux", dédié à la musique expérimentale, où j'ai participé à la communication en tant que bénévole. J'ai contribué à la création de contenu photo, vidéo et de témoignages pour alimenter les réseaux sociaux du festival, et cela m'a permis de découvrir l'envers du décor d'un événement culturel tout en développant des compétences concrètes en communication.
                     </p>
                     <div class="about-images">
                         <div class="about-image-wrapper" id="img1">
@@ -170,18 +242,14 @@
                             <img src="images/tour_charlmagne.jpg" alt="Tours">
                         </div>
                     </div>
-
-                    
                     <p>
-                        Dans un autre registre, j'ai également été community manager des réseaux sociaux de mon département, le BUT Science des données de Niort, aux côtés de trois autres étudiants. Concevoir des publications et représenter notre formation sur les réseaux m'a permis de développer un esprit de synthèse, de la créativité, tout en respectant la neutralité de la formation, et un vrai sens du travail en équipe.
+                        En 2024, j'ai également rejoint l'équipe bénévole du festival Terres du Son. Cette expérience a été particulièrement enrichissante, tant sur le plan humain que logistique. J'y ai rencontré des personnes avec qui j'ai gardé contact tout au long de l'année.
                     </p>
                     <p>
-                        Même si certaines activités, comme la course à pied, ont été mises de côté pour des raisons de santé, je continue à m'investir dans ce qui m'anime, c'est à dire découvrir de nouveaux artistes, aller à des concerts, ou simplement échanger sur des sujets de société, de culture ou de communication. 
-                        <br>Je m'intéresse aussi à la photographie, que je pratique de manière personnelle. Elle m'offre une façon différente de voir mon environnement, en particulier ma ville, Tours, que je redécouvre à travers les petits détails du quotidien auxquels je prête désormais plus attention. 
-                        <br>De plus, d'un point de vue sportif, je m'essaie à de nouvelles activités dès que j'en ai l'occasion, dans le but de conserver une forme physique, ce que je considère comme essentiel.
+                        Je m'intéresse aussi à la photographie, que je pratique de manière personnelle. Elle m'offre une façon différente de voir mon environnement, en particulier ma ville, Tours, que je redécouvre à travers les petits détails du quotidien. J'aime également découvrir de nouveaux artistes et aller à des concerts, ou simplement échanger sur des sujets de société, de culture ou de communication.
                     </p>
                     <p>
-                        Toutes ces expériences renforcent mon envie de contribuer à des projets concrets, humains, et plus ou moins porteurs de sens. C'est pour cela que je suis impatiente de poursuivre sur cette voie de la découverte et de continuer à apprendre de nouvelles choses, en gardant cette curiosité qui me pousse au quotidien à sortir de ma zone de confort !
+                        Toutes ces expériences renforcent mon envie de contribuer à des projets concrets, humains et porteurs de sens. C'est pour cela que je suis impatiente de poursuivre sur cette voie de la découverte et de continuer à apprendre de nouvelles choses, en gardant cette curiosité qui me pousse au quotidien à sortir de ma zone de confort !
                     </p>
                 </div>
                 <div class="read-more-overlay"></div>
@@ -193,30 +261,52 @@
     <!-- Section Projets -->
     <section id="projets" class="section-projects">
         <h2>Mes Projets</h2>
-        <p class="section-subtitle">Projets BUT3 — en cours de réalisation</p>
+        <p class="section-subtitle">Une sélection de projets BUT2 & BUT3</p>
         <div class="featured-projects-grid">
 
-            <!-- Placeholder BUT3 — Chatbot LLM -->
             <div class="project-card" data-year="3" data-domain="info">
                 <div class="project-image">
-                    <img src="images/but_sd_placeholder.png" alt="Chatbot LLM">
-                    <div class="project-icon"><i class="fas fa-robot"></i></div>
+                    <img src="projets/but3_big_data/dashboard_bigdata (2).png" alt="Big Data">
+                    <div class="project-icon"><i class="fas fa-server"></i></div>
                 </div>
                 <div class="project-content">
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
-                        <span class="project-tag">LLM</span>
-                        <span class="project-tag">IA</span>
+                        <span class="project-tag">Hadoop</span>
+                        <span class="project-tag">Big Data</span>
                     </div>
-                    <h3 class="project-title">Chatbot conversationnel — LLM</h3>
-                    <p class="project-description">Conception d'un agent conversationnel exploitant un grand modèle de langage pour répondre à des questions contextualisées.</p>
+                    <h3 class="project-title">Traitement de données à grande échelle</h3>
+                    <p class="project-description">Pipeline de traitement Big Data — ingestion, nettoyage et analyse à grande échelle sur un jeu de données réel.</p>
+                    <div class="project-links">
+                        <a href="projets/but3_big_data/sujet_projet.pdf" class="project-link" target="_blank"><i class="fas fa-file-pdf"></i> Sujet du projet</a>
+                        <a href="https://github.com/loladn/projet_bigdata_sentiments" class="project-link" target="_blank"><i class="fas fa-code"></i> Projet GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Placeholder BUT3 — Réseau de neurones -->
+            <div class="project-card" data-year="3" data-domain="info">
+                <div class="project-image">
+                    <img src="projets/but3_sae_mongodb/mongodb.png" alt="MongoDB">
+                    <div class="project-icon"><i class="fas fa-database"></i></div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">MongoDB</span>
+                        <span class="project-tag">NoSQL</span>
+                        <span class="project-tag">Python</span>
+                    </div>
+                    <h3 class="project-title">Gestion de données NoSQL — MongoDB</h3>
+                    <p class="project-description">Conception d'une base orientée documents et requêtes d'agrégation pour l'analyse de données non structurées.</p>
+                    <div class="project-links">
+                        <a href="projets/but3_sae_mongodb/sujet.pdf" class="project-link" target="_blank"><i class="fas fa-file-pdf"></i> Sujet du projet</a>
+                        <a href="https://github.com/loladn/Paris2055_MongoDB_migration_SQL" class="project-link" target="_blank"><i class="fas fa-code"></i> Projet GitHub</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-card" data-year="3" data-domain="stats">
                 <div class="project-image">
-                    <img src="images/but_sd_placeholder.png" alt="Réseau de neurones">
+                    <img src="projets/but3_reseau_neurones/schema.png" alt="Réseau de neurones">
                     <div class="project-icon"><i class="fas fa-brain"></i></div>
                 </div>
                 <div class="project-content">
@@ -227,23 +317,11 @@
                     </div>
                     <h3 class="project-title">Modélisation par réseau de neurones</h3>
                     <p class="project-description">Implémentation et entraînement d'un réseau de neurones pour la classification de données réelles — comparaison de modèles.</p>
-                </div>
-            </div>
-
-            <!-- Placeholder BUT3 — App web Dash -->
-            <div class="project-card" data-year="3" data-domain="info">
-                <div class="project-image">
-                    <img src="images/but_sd_placeholder.png" alt="App web Dash">
-                    <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Plotly Dash</span>
-                        <span class="project-tag">Dataviz</span>
+                    <div class="project-links">
+                        <a href="projets/but3_reseau_neurones/projet_perceptron.pdf" class="project-link" target="_blank"><i class="fas fa-file-pdf"></i> Sujet du projet</a>
+                        <a href="projets/but3_reseau_neurones/rapport_reseaux_de_neurones.pdf" class="project-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport du projet</a>
+                        <a href="https://github.com/loladn/projet-reseau-de-neurones" class="project-link" target="_blank"><i class="fas fa-code"></i> Projet GitHub</a>
                     </div>
-                    <h3 class="project-title">Application web de visualisation — Dash</h3>
-                    <p class="project-description">Développement d'un tableau de bord interactif avec Python Dash pour l'exploration et la visualisation de données métier.</p>
                 </div>
             </div>
 
@@ -344,49 +422,52 @@
     <!-- Section Bilan Personnel -->
     <section id="bilan" class="section-bilan">
         <h2>Bilan personnel</h2>
-        <div class="bilan-content">
-            
-            <div class="personal-review">
-                <div class="personal-review-content collapsed">
-                    <p>
-                        Lors de cette deuxième année de Bachelor Universitaire de Technologie (BUT) Science des données au sein du site de Niort de l'IUT de Poitiers, j'ai davantage découvert le domaine de la data, tout en réfléchissant à l'avenir que je souhaite me forger d'un point de vue universitaire et professionnel. <br>Ce bilan personnel reprend donc mes réflexions face à mes expériences de cours et d'alternance en entreprise, ainsi que mes perspectives de poursuite d'études et de professionnalisation dans le domaine de la donnée.
-                    </p>
-                    <div class="read-more-overlay"></div>
-                    <div class="full-content">
-                        <p>
-                            <br>Tout d'abord, le début de cette deuxième année dans la formation a été marqué par une diversité des cours proposés, plus large que l'année précédente, grâce aux enseignements de nombreux.ses intervenant.es professionnel.les, nous proposant (ainsi) des cours de maîtrise de logiciels et langages de programmation divers, tels que Tableau Software et Business Object, deux logiciels fréquemment utilisés en entreprise pour de la préparation de données et de la visualisation par la réalisation de tableaux de bord. 
-                            <br> Mes résultats lors du premier semestre (S3 de la formation) ont globalement suivi la ligne directrice de l'année précédente, avec des notes tout à fait satisfaisantes pour les ressources telles que la gestion, l'anglais et les statistiques, ainsi que pour les cours et projets d'informatique, dans lesquels je me sens le plus à l'aise.
-                            <br>En revanche, elles étaient un peu moins satisfaisantes pour l'algèbre que je n'ai toujours pas réussi à maîtriser par une approche de révisions plus efficace.
-                            <br><br>C'est d'ailleurs pour cela que j'ai fait le choix, dès le milieu de la première année, de suivre le parcours Visualisation, Conception d'Outils Décisionnels (VCOD) pour cette deuxième année. 
+        <div class="bilan-cards">
 
-                        </p>
-                        <p>
-                            <br>Par la suite, le second semestre de l'année m'a vue regagner en motivation et cela s'est fait ressentir dans les résultats. Entourée d'un groupe de travail sérieux et motivé j'ai pu grandement améliorer mes méthodes de travail au quotidien. 
-                            <br> De plus, c'est lors de ce semestre que j'ai pu concrètement découvrir le domaine spécialisé de la géomatique, grâce aux cours de Systèmes d'Information Géographiques (SIG) d'un intervenant extérieur professionnel qui nous a permis d'appréhender des cas réels d'utilisation de la géographie dans le traitement et l'analyse de données pour en tirer des conclusions. Cela s'est donc matérialisé par la réalisation de nombreux projets de découverte, en cours, avec des données réelles du gouvernement, et d'un projet final, plus complet, que j'ai choisi d'effectuer seule afin de ne manquer aucun aspect technique des étapes de la réalisation de celui-ci.
-
-                        </p>
-                        <a href="#projets">Cf : Étude SIG de l'implantation des McDonald's en France</a>
-                        <p>
-                            <br>Cette deuxième année a également été marquée par le début de mon alternance, que j'effectue en tant que salariée chez SNCF Voyageurs, TER Centre Val de Loire, à Tours, au sein de la Direction de production de l'opérationnel. J'y effectue des missions de création de codes d'automatisation de tâches, ainsi que des missions de maintenance d'outils déjà existants dans l'environnement de travail.
-                            <br>Ce début d'expérience en entreprise, qui se poursuivra jusqu'à l'été 2026, m'apporte beaucoup de rigueur et de compétences techniques au quotidien pour répondre au mieux aux besoins de l'entreprise, mais également suffisamment pour aborder les projets de cours avec un point de vue différent, bien plus logique et méthodique. Les cas pratiques manipulés lors de projets dans le cadre de la formation, ainsi que les cours théoriques de statistiques et programmation me semblent davantage intéressants car je les mets aisément en parallèle avec les cas vus en entreprise. C'est un réel avantage que je remarque en le fait de suivre la formation du BUT en alternance. 
-
-                        </p>
-                        <p>
-                            <br>En ce qui concerne l'avenir, mon choix se porte, à ce jour, davantage vers une poursuite d'études qu'une insertion professionnelle à l'issue de la troisième année de BUT, du fait de mon envie grandissante de découvrir des aspects plus spécifiques ou plus différents du domaine de la donnée. 
-                            <br><br>Ainsi, mes réflexions vis-à-vis de mes objectifs personnels d'études m'ont poussée à me renseigner sur des formations à effectuer à la fin du BUT Science des données. 
-                            <br>Le domaine de la géomatique m'intéressant fortement, je me suis renseignée auprès d'un professionnel de ce milieu et il semblerait que l'option d'un master mention Géomatique soit la plus logique.
-                            <br>Cependant, je me laisse encore le temps de la réflexion durant cette fin de deuxième année et le début de la troisième année, avant de prendre une décision « définitive ».
-
-                        </p>
-                    </div>
+            <div class="bilan-card">
+                <div class="bilan-card-header but1">
+                    <h3>BUT 1 — 2023–2024</h3>
+                    <span>Fondamentaux & découverte</span>
                 </div>
-                <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
+                <div class="bilan-card-body">
+                    Dès le début de l'année, j'ai découvert un domaine intéressant où les mathématiques, les statistiques et l'informatique se combinent pour former la science des données.
+                    Mes résultats ont été globalement satisfaisants, surtout dans les modules de programmation, lié au traitement de données, ainsi que ...
+                </div>
+                <div class="bilan-card-footer">
+                    <a href="bilan_1ere_annee.pdf" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Lire le bilan
+                    </a>
+                </div>
             </div>
-            <div class="previous-bilan">
-                <a href="bilan_1ere_annee.pdf" class="btn btn-secondary" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Consulter mon bilan de première année
-                </a>
+
+            <div class="bilan-card">
+                <div class="bilan-card-header but2">
+                    <h3>BUT 2 — 2024–2025</h3>
+                    <span>Spécialisation & alternance</span>
+                </div>
+                <div class="bilan-card-body">
+                    Tout d'abord, le début de cette deuxième année dans la formation a été marqué par une diversité des cours proposés, plus large que l'année précédente, grâce aux enseignements de nombreux.ses intervenant.es professionnel.les, nous proposant des cours de maîtrise de logiciels et langages de ...                </div>
+                <div class="bilan-card-footer">
+                    <a href="bilan_2eme_annee.pdf" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Lire le bilan
+                    </a>
+                </div>
             </div>
+
+            <div class="bilan-card">
+                <div class="bilan-card-header but3">
+                    <h3>BUT 3 — 2025–2026</h3>
+                    <span>Conception & autonomie technique</span>
+                </div>
+                <div class="bilan-card-body">
+                    L'achèvement de cette troisième année de Bachelor Universitaire de Technologie (BUT) en Science des Données marque la fin d'une première étape fondamentale dans ma construction professionnelle. Ces trois années passées à l'IUT de Niort, couplées à mes deux années d'alternance au sein de la Direction...                
+                <div class="bilan-card-footer">
+                    <a href="bilan_3eme_annee.pdf" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Lire le bilan
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -420,21 +501,156 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/lola-dixneuf-701a57298" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:lola.dixneuf@etu.univ-poitiers.fr"><i class="fas fa-envelope"></i></a>
-                <!--<a href="#" target="_blank"><i class="fab fa-github"></i></a>-->
+                <a href="https://github.com/loladn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
             </div>
             <p>&copy; 2026 Lola Dixneuf.</p>
         </div>
     </footer>
 
-    <!-- Modal slide projets alternance -->
-    <div id="modal-slide" class="modal">
-        <div class="modal-content modal-slide-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="slide-modal-title">Présentation du projet</h3>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
+    <!-- Modals projets alternance SNCF -->
+    <div id="modal-velos" class="modal-sncf hide fixed inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeModal('modal-velos')"></div>
+        <div class="sncf-modal-inner relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <button onclick="closeModal('modal-velos')" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur text-gray-500 hover:text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="bg-sncf-light p-8 md:w-1/3 flex flex-col justify-between border-r border-green-100">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-sncf text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-800 mb-4 leading-tight">Suivi des réservations vélos</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Power BI</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">DAX</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Open Data</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Le Défi</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">Éviter les surréservations estivales en confrontant en temps réel les quotas de vente nationaux (SNCF Connect) à la capacité matérielle réelle des rames circulant le jour J.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">L'Impact</h3>
+                    <div class="bg-white p-4 rounded-2xl border border-green-100 shadow-sm">
+                        <p class="text-sncf font-medium">Anticipation visuelle immédiate des conflits permettant au marketing de geler les ventes à temps.</p>
+                    </div>
+                </div>
             </div>
-            <div class="modal-slide-body">
-                <iframe id="slide-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="p-8 md:w-2/3 bg-white flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Architecture des données</h3>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                        <img src="images/schema_suivi_resas_velo.jpg" alt="Schéma Architecture Vélos" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Aperçu du tableau de bord</h3>
+                    <div class="relative w-full h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 group">
+                        <img src="images/img_velos.png" alt="Dashboard Vélos" class="w-full h-full object-cover blur-[6px] group-hover:blur-[2px] transition-all duration-500" style="pointer-events:none">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-gray-900/80 backdrop-blur text-white px-5 py-3 rounded-xl flex items-center gap-3 font-medium shadow-lg">
+                                <i class="fa-solid fa-lock"></i> Données d'entreprise
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-note" class="modal-sncf hide fixed inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeModal('modal-note')"></div>
+        <div class="sncf-modal-inner relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <button onclick="closeModal('modal-note')" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur text-gray-500 hover:text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="bg-sncf-light p-8 md:w-1/3 flex flex-col justify-between border-r border-green-100">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-sncf text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-800 mb-4 leading-tight">Supervision Note Quotidienne</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">API REST</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Power Automate</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">ETL</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Le Défi</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">Industrialiser la récupération des données de régularité ferroviaire face à des serveurs API instables, sans infrastructure Cloud dédiée pour les scripts Python.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">L'Impact</h3>
+                    <div class="bg-white p-4 rounded-2xl border border-green-100 shadow-sm">
+                        <p class="text-sncf font-medium">Création d'un système de gestion d'erreurs garantissant la livraison continue de la note de performance à la Région chaque matin.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 md:w-2/3 bg-white flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Architecture hybride & résilience</h3>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                        <img src="images/schema_note_quo.jpg" alt="Schéma Architecture Note Quotidienne" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Logs et suivi des erreurs</h3>
+                    <div class="relative w-full h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 group">
+                        <img src="images/img_note.png" alt="Logs Note Quotidienne" class="w-full h-full object-cover blur-[6px] group-hover:blur-[2px] transition-all duration-500" style="pointer-events:none">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-gray-900/80 backdrop-blur text-white px-5 py-3 rounded-xl flex items-center gap-3 font-medium shadow-lg">
+                                <i class="fa-solid fa-lock"></i> Données d'entreprise
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-iv" class="modal-sncf hide fixed inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="absolute inset-0" onclick="closeModal('modal-iv')"></div>
+        <div class="sncf-modal-inner relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <button onclick="closeModal('modal-iv')" class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur text-gray-500 hover:text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="bg-sncf-light p-8 md:w-1/3 flex flex-col justify-between border-r border-green-100">
+                <div>
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-sncf text-2xl shadow-sm mb-6">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-800 mb-4 leading-tight">Aide à la décision : Info Voyageur</h2>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Data Viz</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Aide Décision</span>
+                        <span class="bg-white border border-green-200 text-sncf text-xs px-3 py-1 rounded-full font-bold">Historisation</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Le Défi</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">Objectiver la communication client en gare en remplaçant les estimations de retard "au jugé" par des données fiables basées sur l'historique des incidents.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">L'Impact</h3>
+                    <div class="bg-white p-4 rounded-2xl border border-green-100 shadow-sm">
+                        <p class="text-sncf font-medium">Génération de fiches standardisées de "Retard à projeter" pour les agents des 5 grandes gares de la région.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 md:w-2/3 bg-white flex flex-col gap-6 overflow-y-auto max-h-[80vh]">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Processus de calcul</h3>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                        <img src="images/schema_fiabilite.jpg" alt="Schéma Architecture Info Voyageur" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Exemple de fiche générée</h3>
+                    <div class="relative w-full h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100 group">
+                        <img src="images/img_fiabilite.png" alt="Fiche Info Voyageur" class="w-full h-full object-cover blur-[6px] group-hover:blur-[2px] transition-all duration-500 object-top" style="pointer-events:none">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="bg-gray-900/80 backdrop-blur text-white px-5 py-3 rounded-xl flex items-center gap-3 font-medium shadow-lg">
+                                <i class="fa-solid fa-lock"></i> Données d'entreprise
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -467,5 +683,24 @@
 
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hide');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            modal.classList.add('hide');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-sncf.show').forEach(m => closeModal(m.id));
+            }
+        });
+    </script>
 </body>
 </html> 
