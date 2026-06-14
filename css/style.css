@@ -1492,61 +1492,65 @@ section h2 {
     .bilan-cards { grid-template-columns: 1fr; max-width: 500px; }
 }
 
-/* ===== ENGAGEMENTS ===== */
-.section-engagements h2 {
+/* ===== ENGAGEMENTS (dans À propos) ===== */
+.about-intro {
     text-align: center;
-    margin-bottom: 3rem;
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
-.engagement-grid {
+.engagement-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
 }
 
-.engagement-card {
+.engagement-card-sm {
     background: var(--primary-medium);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--gray-light);
-    box-shadow: 0 4px 16px rgba(0, 43, 40, 0.06);
+    box-shadow: 0 3px 12px rgba(0, 43, 40, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.engagement-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 28px rgba(0, 43, 40, 0.12);
+.engagement-card-sm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 43, 40, 0.12);
 }
 
-.engagement-photo {
+.engagement-photo-sm {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: var(--gray-light);
 }
 
-.engagement-photo img {
+.engagement-photo-sm img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.engagement-body {
-    padding: 1.25rem 1.4rem 1.5rem;
+.engagement-body-sm {
+    padding: 0.75rem 1rem 1rem;
 }
 
 .engagement-tag {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.65rem;
     border-radius: 50px;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.45rem;
 }
 
 .engagement-tag.communication  { background: var(--gray-light); color: var(--accent-dark); }
@@ -1554,24 +1558,30 @@ section h2 {
 .engagement-tag.representation { background: var(--text-primary); color: #fff; }
 .engagement-tag.concours       { background: var(--accent); color: #fff; }
 
-.engagement-body h3 {
-    font-size: 0.95rem;
+.engagement-body-sm h3 {
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
     line-height: 1.35;
+    margin-bottom: 0.4rem;
 }
 
-.engagement-body p {
-    font-size: 0.82rem;
+.engagement-body-sm p {
+    font-size: 0.72rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.55;
     margin: 0;
 }
 
-@media (max-width: 700px) {
-    .engagement-grid {
+@media (max-width: 800px) {
+    .engagement-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .engagement-row {
         grid-template-columns: 1fr;
-        max-width: 480px;
+        max-width: 360px;
     }
 }
