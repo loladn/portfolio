@@ -1354,6 +1354,20 @@ section h2 {
 
 .projets-page-section { padding-top: 2.5rem; }
 
+.badge-but3 {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    border-radius: 10px;
+    letter-spacing: 0.06em;
+    vertical-align: middle;
+    margin-left: 7px;
+    text-transform: uppercase;
+}
+
 @media (max-width: 900px) {
     .featured-projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
