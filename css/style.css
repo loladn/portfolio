@@ -358,6 +358,51 @@ section h2 {
     transform: translateY(-2px);
 }
 
+.skill-tag[data-ac] {
+    position: relative;
+}
+
+.skill-tag[data-ac]::before {
+    content: attr(data-ac);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-dark);
+    color: var(--white);
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    width: 230px;
+    text-align: left;
+    white-space: normal;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 200;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.skill-tag[data-ac]::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--accent-dark);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 200;
+}
+
+.skill-tag[data-ac]:hover::before,
+.skill-tag[data-ac]:hover::after {
+    opacity: 1;
+}
+
 /* Contact Form */
 .contact-container {
     max-width: 600px;
